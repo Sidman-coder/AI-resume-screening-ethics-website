@@ -1,0 +1,82 @@
+.card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+  height: 100%;
+}
+
+.card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--indigo-dim);
+  color: var(--indigo);
+  margin-bottom: var(--space-3);
+}
+
+.card__icon .icon {
+  width: 22px;
+  height: 22px;
+}
+
+.card__meta {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--slate-soft);
+  margin-bottom: 0.5rem;
+}
+
+.card__title {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__description {
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+.card__tag {
+  display: inline-block;
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.03em;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+
+.card__tag--positive {
+  background: var(--indigo-dim);
+  color: var(--indigo);
+}
+
+.card__tag--negative {
+  background: #efeef7;
+  color: var(--ink-soft);
+}
+
+/* Tone variants restyle the icon chip so positive/negative cards are
+   distinguishable at a glance even before reading the tag text. */
+.card--positive .card__icon {
+  background: var(--indigo-dim);
+  color: var(--indigo);
+}
+
+.card--negative .card__icon {
+  background: var(--violet-dim);
+  color: var(--ink-soft);
+}
+
+.card--negative {
+  border-color: var(--line);
+}
