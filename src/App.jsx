@@ -5,42 +5,43 @@
 // <App /> once into the page's #root element, and everything the user
 // ever sees is produced by App and the components it renders. Its job
 // here is layout (Navbar always on top, Footer always on bottom) and
-// routing (which page component fills the middle).
+// picking which page component fills the middle.
 //
-// REACT CONCEPT — React Router:
-// A traditional multi-page website has one HTML file per URL, and the
-// browser reloads the whole page on every navigation. React Router
-// instead keeps a single page loaded and swaps which component is
-// rendered based on the current URL — <BrowserRouter> reads the
-// browser's address bar, <Routes> looks at that address, and each
-// <Route> says "if the URL matches this `path`, render this
-// `element`". That's what makes navigating between Home, Impacts, and
-// Recommendation instant instead of triggering a full page reload.
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+// REACT CONCEPT — useState instead of a router:
+// There is no react-router here. Instead, `page` is a piece of state
+// that holds the name of the page to show ("home", "impacts", or
+// "recommendation"). Every "link" on the site is really a button that
+// calls setPage with a new name. React re-renders with the new page,
+// but the browser's address bar never changes — the whole site is one
+// URL.
+import { useState } from "react";
+import { Footer, Navbar } from "./components";
 import Home from "./pages/Home";
 import Impacts from "./pages/Impacts";
 import Recommendation from "./pages/Recommendation";
 
+const PAGES = {
+  home: Home,
+  impacts: Impacts,
+  recommendation: Recommendation,
+};
+
 function App() {
+  const [page, setPage] = useState("home");
+
+  // Look up which page component to render from the PAGES map above.
+  const CurrentPage = PAGES[page];
+
   return (
-    <BrowserRouter>
-      {/* Navbar and Footer sit outside <Routes>, so they render on every
-          page no matter which route is active — only the content in
-          between changes as the user navigates. */}
-      <Navbar />
+    <>
+      <Navbar page={page} onNavigate={setPage} />
 
       <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/impacts" element={<Impacts />} />
-          <Route path="/recommendation" element={<Recommendation />} />
-        </Routes>
+        <CurrentPage onNavigate={setPage} />
       </main>
 
-      <Footer />
-    </BrowserRouter>
+      <Footer onNavigate={setPage} />
+    </>
   );
 }
 

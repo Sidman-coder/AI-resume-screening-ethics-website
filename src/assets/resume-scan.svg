@@ -1,0 +1,16 @@
+<svg width="400" height="320" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A resume document being reviewed by a magnifying glass with a checkmark inside it">
+  <rect x="90" y="30" width="200" height="260" rx="8" fill="#ffffff" stroke="#dddddd" stroke-width="2" />
+  <circle cx="130" cy="72" r="16" fill="#f2f2f2" />
+  <rect x="158" y="64" width="90" height="10" rx="2" fill="#dddddd" />
+  <rect x="158" y="80" width="60" height="8" rx="2" fill="#f2f2f2" />
+  <rect x="110" y="112" width="160" height="8" rx="2" fill="#f2f2f2" />
+  <rect x="110" y="132" width="160" height="8" rx="2" fill="#f2f2f2" />
+  <rect x="110" y="152" width="110" height="8" rx="2" fill="#f2f2f2" />
+  <rect x="110" y="182" width="160" height="8" rx="2" fill="#f2f2f2" />
+  <rect x="110" y="202" width="130" height="8" rx="2" fill="#f2f2f2" />
+  <rect x="110" y="222" width="160" height="8" rx="2" fill="#f2f2f2" />
+  <rect x="110" y="242" width="90" height="8" rx="2" fill="#f2f2f2" />
+  <circle cx="290" cy="220" r="48" fill="#ffffff" stroke="#1d4ed8" stroke-width="9" />
+  <line x1="324" y1="254" x2="360" y2="290" stroke="#1d4ed8" stroke-width="11" stroke-linecap="round" />
+  <path d="M270 219l14 15 30-33" fill="none" stroke="#1d4ed8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
